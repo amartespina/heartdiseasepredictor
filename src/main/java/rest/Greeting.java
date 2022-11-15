@@ -1,4 +1,4 @@
-package com.example.restservice;
+package rest;
 
 public class Greeting {
 
