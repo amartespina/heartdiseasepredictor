@@ -23,4 +23,11 @@ public class GreetingController {
 		return "tumba la casa"; 
 	}
 	
+	@GetMapping("/aprenderModelo")
+	public String  modelio(){
+		Modelo modelo = new Modelo();
+		modelo.aprenderModelo();
+		System.out.println("Hasta aqui se ha aprendido el modelo");
+		return(modelo.aplicarModelo()); 		
+	}
 }

@@ -60,7 +60,7 @@ public class Modelo {
         try{
             String[] valoresAtributos = {"0", "1"};
             Classifier clasificador  = (Classifier) weka.core.SerializationHelper.read("./models/AlgunosAtributosRandomForest.model");
-            Instances data = leerInstancias("./test_data/test2.arff");
+            Instances data = leerInstancias("./test_data/test.arff");
             return valoresAtributos[(int) clasificador.classifyInstance(data.instance(0))];
         }catch (Exception ex) {
             Logger.getLogger(Modelo.class.getName()).log(Level.SEVERE, null, ex);
