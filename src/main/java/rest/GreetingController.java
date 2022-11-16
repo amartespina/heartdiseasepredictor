@@ -1,5 +1,6 @@
 package rest;
 
+import aplicacion.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,4 +17,10 @@ public class GreetingController {
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
 	}
+
+	@GetMapping("/tumbalacasa")
+	public String tumba(){
+		return "tumba la casa"; 
+	}
+	
 }

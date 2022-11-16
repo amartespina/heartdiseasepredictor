@@ -1,0 +1,15 @@
+@relation 'heart-weka.filters.unsupervised.attribute.Remove-R3,7,9-11'
+
+@attribute Age numeric
+@attribute Sex {M,F}
+@attribute RestingBP numeric
+@attribute Cholesterol numeric
+@attribute FastingBS numeric
+@attribute MaxHR numeric
+@attribute HeartDisease {0,1}
+
+@data
+49,F,160,180,0,156,? 
+%
+%
+%
