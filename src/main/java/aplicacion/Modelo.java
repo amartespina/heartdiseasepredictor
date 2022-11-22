@@ -19,7 +19,7 @@ import weka.core.converters.ConverterUtils;
 
 /**
  *
- * @author mariano
+ * @author angel
  */
 public class Modelo {
 

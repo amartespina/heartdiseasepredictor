@@ -9,7 +9,7 @@ package aplicacion;
 
 /**
  *
- * @author mariano
+ * @author angel
  */
 public class Principal{
 

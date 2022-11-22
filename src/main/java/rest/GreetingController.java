@@ -3,11 +3,13 @@ package rest;
 import aplicacion.*;
 import java.util.concurrent.atomic.AtomicLong;
 
+import org.springframework.boot.autoconfigure.amqp.RabbitProperties.Template;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+
 public class GreetingController {
 
 	private static final String template = "Hello, %s!";
@@ -23,11 +25,21 @@ public class GreetingController {
 		return "tumba la casa"; 
 	}
 	
+
+	/** 
+	@GetMapping("/")
+		public String welcome(){
+		
+		}
+	
+	*/
+
+	
 	@GetMapping("/aprenderModelo")
 	public String  modelio(){
 		Modelo modelo = new Modelo();
 		modelo.aprenderModelo();
 		System.out.println("Hasta aqui se ha aprendido el modelo");
-		return(modelo.aplicarModelo()); 		
+		return("Al aplicar RandomForest a los datos aportados, el resultado es " + modelo.aplicarModelo()); 		
 	}
 }
