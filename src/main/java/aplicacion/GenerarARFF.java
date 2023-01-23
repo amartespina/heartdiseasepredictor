@@ -1,22 +1,23 @@
 package aplicacion;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 import weka.core.Attribute;
 import weka.core.DenseInstance;
-import weka.core.FastVector;
 import weka.core.Instance;
 import weka.core.Instances;
-import weka.core.Utils;
 
 
 
 public class GenerarARFF{
+
+// Los Atributos Sexo y HeartDisease son de tipo Nominal porque
+// representa un valor tomado de un conjunto discreto de valores posibles
 List<String> AtributosSexo = Arrays.asList("M","F");
 List<String> AtributosHearthDisease = Arrays.asList("0","1");
 
-
+// Declaramos Atributos de Tipo Numerico
 Attribute Age = new Attribute("Age");
 Attribute RestingBP = new Attribute("RestingBP");
 Attribute Cholesterol = new Attribute("Cholesterol");
@@ -25,10 +26,11 @@ Attribute MaxHR = new Attribute("MaxHR");
 Attribute HeartDisease = new Attribute("HearthDisease",AtributosHearthDisease);
 Attribute Sex = new Attribute("Sex",AtributosSexo);
 
+
 ArrayList<Attribute> atributos = new ArrayList<>(Arrays.asList(Age,Sex,RestingBP,Cholesterol,FastingBS,MaxHR,HeartDisease));
 
 
-public void GenerarAtributos(Integer ValorAge, String ValorSexo,Integer ValorRestingBP, Integer ValorCholesterol, Integer ValorFastingBS, Integer ValorMaxHR){
+public Instances GenerarInstanciaTest(Integer ValorAge, String ValorSexo,Integer ValorRestingBP, Integer ValorCholesterol, Integer ValorFastingBS, Integer ValorMaxHR){
         Instances InstancesTest = new Instances("InstancesTest1",atributos,atributos.size());
         Instance instancia = new DenseInstance(atributos.size());
         //System.out.println("Esto es la instancia" + instancia);
@@ -40,6 +42,8 @@ public void GenerarAtributos(Integer ValorAge, String ValorSexo,Integer ValorRes
         instancia.setValue(MaxHR,ValorMaxHR);
         InstancesTest.add(instancia);
         System.out.println(InstancesTest);
+        return InstancesTest;
+
     
         
         

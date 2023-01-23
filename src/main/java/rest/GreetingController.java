@@ -33,6 +33,11 @@ public class GreetingController {
 		}
 	
 	*/
+	@GetMapping("/crearModelo")
+	public void CrearModelo(){
+		System.out.println("Esto es una rpeuba");
+	}
+	
 
 	
 	@GetMapping("/aprenderModelo")
@@ -40,6 +45,6 @@ public class GreetingController {
 		Modelo modelo = new Modelo();
 		modelo.aprenderModelo();
 		System.out.println("Hasta aqui se ha aprendido el modelo");
-		return("Al aplicar RandomForest a los datos aportados, el resultado es " + modelo.aplicarModelo()); 		
+		return("Al aplicar RandomForest a los datos aportados, el resultado es " + modelo.GenerarInstanciaTest(40,"M",140,289,0,172)); 		
 	}
 }
