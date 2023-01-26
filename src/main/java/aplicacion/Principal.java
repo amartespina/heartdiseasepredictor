@@ -19,9 +19,6 @@ public class Principal{
     public static void main(String[] args) {
        Modelo modelo = new Modelo();
        modelo.aprenderModelo();
-       GenerarARFF generar = new GenerarARFF();
-      //generar.GenerarInstanciaTest(49,F,160,180,0,156
-       
       System.out.println("El resultado tras aplicar a los datos es " + modelo.GenerarInstanciaTest(50,"F",160,180,0,156));   }
 
 }
