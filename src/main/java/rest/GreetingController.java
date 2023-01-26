@@ -20,31 +20,26 @@ public class GreetingController {
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
 	}
 
-	@GetMapping("/tumbalacasa")
-	public String tumba(){
-		return "tumba la casa"; 
-	}
-	
-
-	/** 
-	@GetMapping("/")
-		public String welcome(){
-		
-		}
-	
-	*/
 	@GetMapping("/crearModelo")
-	public void CrearModelo(){
-		System.out.println("Esto es una rpeuba");
+	public String CrearModelo(@RequestParam Integer id, String cadena ){
+		return cadena; 
+
+		
 	}
 	
 
-	
+	@GetMapping("pruebaArgumentos")
+	public String prueba(@RequestParam Integer id, String cadena){
+		Modelo modelo = new Modelo();
+		return("eoso" + modelo.pruebaArgumentos(id,cadena));
+	}
 	@GetMapping("/aprenderModelo")
-	public String  modelio(){
+	public String  modelo(@RequestParam Integer ValorAge, String ValorSexo,Integer ValorRestingBP, Integer ValorCholesterol, Integer ValorFastingBS, Integer ValorMaxHR){
 		Modelo modelo = new Modelo();
 		modelo.aprenderModelo();
 		System.out.println("Hasta aqui se ha aprendido el modelo");
-		return("Al aplicar RandomForest a los datos aportados, el resultado es " + modelo.GenerarInstanciaTest(40,"M",140,289,0,172)); 		
-	}
+		return("Al aplicar RandomForest a los datos aportados, el resultado es " + modelo.GenerarInstanciaTest(ValorAge,ValorSexo,ValorRestingBP,ValorCholesterol,ValorFastingBS,ValorMaxHR));
+			//40,"M",140,289,0,172)); 		
+	}// localhost:8080/aprenderModelo?ValorAge=40&ValorSexo=M&ValorRestingBP=140&ValorCholesterol=289&ValorFastingBS=0&ValorMaxHR=172
 }
+

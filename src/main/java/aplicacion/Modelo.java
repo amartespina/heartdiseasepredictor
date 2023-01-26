@@ -125,6 +125,9 @@ ArrayList<Attribute> atributos = new ArrayList<>(Arrays.asList(Age,Sex,RestingBP
 
     // APrender modelo aparentemente hecho. Tenemos que mezclar GenerarARFF en AplicarMOdelo
 
+    public String pruebaArgumentos(Integer Id, String cadena){
+        return cadena;
+    }
 /**
     Original public String aplicarModelo() {
         try{
