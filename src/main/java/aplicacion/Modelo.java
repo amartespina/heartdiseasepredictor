@@ -59,13 +59,13 @@ ArrayList<Attribute> atributos = new ArrayList<>(Arrays.asList(Age,Sex,RestingBP
             //create RandomForest
             Classifier cls = new RandomForest();
             //Creamos el Dataset cargándolo de un fchero ARFF
-            Instances InstanciaEntrenamiento = new Instances(new BufferedReader(new FileReader("./training_data/heartAlgunosAtributos.arff")));
+            Instances InstanciaEntrenamiento = new Instances(new BufferedReader(new FileReader("./training_data/fallosCardiacosPersonalizado.arff")));
             // Establecemos que el último atributo va a ser el  Atributo Clase. El atributo clase es la variable que deseamos predecir.
             InstanciaEntrenamiento.setClassIndex(InstanciaEntrenamiento.numAttributes()-1);
             //Entenamos el clasificador con InstanciaEntrenamiento
             cls.buildClassifier(InstanciaEntrenamiento);
             // Serializamos el modelo 
-            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./models/AlgunosAtributosRandomForest.model"));
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./models/fallosCardiacosPersonalizado.model"));
             oos.writeObject(cls);
             oos.flush();
             oos.close();
@@ -75,8 +75,8 @@ ArrayList<Attribute> atributos = new ArrayList<>(Arrays.asList(Age,Sex,RestingBP
             }
     }
 
-    public String GenerarInstanciaTest(Integer ValorAge, String ValorSexo,Integer ValorRestingBP, Integer ValorCholesterol, Integer ValorFastingBS, Integer ValorMaxHR){
-       Instances InstancesTest = new Instances("InstancesTest1",atributos,atributos.size());
+    public String generarInstanciaConsulta(Integer ValorAge, String ValorSexo,Integer ValorRestingBP, Integer ValorCholesterol, Integer ValorFastingBS, Integer ValorMaxHR){
+       Instances InstancesConsulta = new Instances("InstancesConsulta",atributos,atributos.size());
         Instance instancia = new DenseInstance(atributos.size());
         instancia.setValue(Age,ValorAge);
         instancia.setValue(Sex,ValorSexo);
@@ -84,14 +84,14 @@ ArrayList<Attribute> atributos = new ArrayList<>(Arrays.asList(Age,Sex,RestingBP
         instancia.setValue(Cholesterol,ValorCholesterol);
         instancia.setValue(FastingBS,ValorFastingBS);
         instancia.setValue(MaxHR,ValorMaxHR);
-        InstancesTest.add(instancia);
+        InstancesConsulta.add(instancia);
         // Establecemos el atributo clase. 
-        InstancesTest.setClassIndex(InstancesTest.numAttributes()-1);
+        InstancesConsulta.setClassIndex(InstancesConsulta.numAttributes()-1);
         try{
             String[] valoresAtributos={"0","1"};
             //Leemos el modelo creado anteriormente. 
-            Classifier clasificador  = (Classifier) weka.core.SerializationHelper.read("./models/AlgunosAtributosRandomForest.model");
-            return valoresAtributos[(int) clasificador.classifyInstance(InstancesTest.instance(0))];
+            Classifier clasificador  = (Classifier) weka.core.SerializationHelper.read("./models/fallosCardiacosPersonalizado.model");
+            return valoresAtributos[(int) clasificador.classifyInstance(InstancesConsulta.instance(0))];
             }catch (Exception ex) {
             Logger.getLogger(Modelo.class.getName()).log(Level.SEVERE, null, ex);
             return "Error al intentar leer el modelo";
