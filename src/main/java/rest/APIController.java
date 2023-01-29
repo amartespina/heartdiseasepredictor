@@ -34,7 +34,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class APIController {
 	
 	@GetMapping("/aprenderModelo")
-
 	public String  modelo(@RequestParam Integer edad, String sexo,Integer presArtReposo, Integer colesterol, Integer glucemiaAyunas, Integer frecuenciaCardiacaMax){
 		Modelo modelo = new Modelo();
 		modelo.aprenderModelo();
