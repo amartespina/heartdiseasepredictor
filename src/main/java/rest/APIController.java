@@ -30,6 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Ejemplos de Consultas: 
  * Resultado 0 ==> localhost:8080/aprenderModelo?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172
  * Resultado 1==> localhost:8080/aprenderModelo?edad=49&sexo=F&presArtReposo=160&colesterol=180&glucemiaAyunas=0&frecuenciaCardiacaMax=156
+ * mvn build 
  */
 public class APIController {
 	
@@ -38,9 +39,13 @@ public class APIController {
 		Modelo modelo = new Modelo();
 		modelo.aprenderModelo();
 		return("Al aplicar RandomForest a los datos aportados, el resultado es " + modelo.generarInstanciaConsulta(edad,sexo,presArtReposo,colesterol,glucemiaAyunas,frecuenciaCardiacaMax));
-			
+		
+	}
 
+	@GetMapping("/prueba")
+	public String pruebaa(){
+		return("esto es la prueba");
+		
 	}
 
 }
-
