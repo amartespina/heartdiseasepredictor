@@ -22,7 +22,7 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-    <groupId>nz.ac.waikato.cms.weka</groupId>
+     <groupId>nz.ac.waikato.cms.weka</groupId>
     <artifactId>weka-stable</artifactId>
     <version>3.8.0</version>
 </dependency>
