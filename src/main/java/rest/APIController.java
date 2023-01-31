@@ -37,7 +37,7 @@ public class APIController {
 	@GetMapping("/aprenderModelo")
 	public String  modelo(@RequestParam Integer edad, String sexo,Integer presArtReposo, Integer colesterol, Integer glucemiaAyunas, Integer frecuenciaCardiacaMax){
 		Modelo modelo = new Modelo();
-		modelo.aprenderModelo();
+		//modelo.aprenderModelo();
 		return("Al aplicar RandomForest a los datos aportados, el resultado es " + modelo.generarInstanciaConsulta(edad,sexo,presArtReposo,colesterol,glucemiaAyunas,frecuenciaCardiacaMax));
 		
 	}

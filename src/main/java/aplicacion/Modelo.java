@@ -112,7 +112,7 @@ public class Modelo {
         try{
             String[] valoresAtributos={"0","1"};
             //Leemos el modelo creado anteriormente. 
-            Classifier clasificador  = (Classifier) weka.core.SerializationHelper.read("./src/main/resources/models/fallosCardiacosPersonalizado.model");
+            Classifier clasificador  = (Classifier) weka.core.SerializationHelper.read("./model/fallosCardiacosPersonalizado.model");
             return valoresAtributos[(int) clasificador.classifyInstance(InstancesConsulta.instance(0))];
             }catch (Exception ex) {
             Logger.getLogger(Modelo.class.getName()).log(Level.SEVERE, null, ex);
