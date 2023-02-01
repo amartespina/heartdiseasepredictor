@@ -60,6 +60,7 @@ public class Modelo {
     // ArrayList que va a contener todos los atributos
     ArrayList<Attribute> atributos = new ArrayList<>(Arrays.asList(Age,Sex,RestingBP,Cholesterol,FastingBS,MaxHR,HeartDisease));
 
+    /**
     public void aprenderModelo(){
         try{
             //create RandomForest
@@ -82,7 +83,7 @@ public class Modelo {
             Logger.getLogger(Modelo.class.getName()).log(Level.SEVERE, null, ex);
             }
     }
-
+**/
     /**
      * Almacena los valores de la consulta en una instancia. 
      * @param edad: Edad del sujeto
