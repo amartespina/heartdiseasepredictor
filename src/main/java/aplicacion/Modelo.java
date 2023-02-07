@@ -12,13 +12,9 @@ limitations under the License.
 
 package aplicacion;
 
-import java.io.BufferedReader;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.ObjectOutputStream;
+
 
 import weka.classifiers.Classifier;
-import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
 import weka.core.Instance;
 import weka.core.Attribute;
@@ -120,4 +116,4 @@ public class Modelo {
             return "Error al intentar leer el modelo";
         }        
     }
-}
+} 
