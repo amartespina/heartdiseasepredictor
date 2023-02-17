@@ -13,11 +13,14 @@ limitations under the License.
 
 package rest;
 
-import aplicacion.*;
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import aprendizajeautomatico.*;
 
 /**
  * @author angel
@@ -29,19 +32,30 @@ import org.springframework.web.bind.annotation.RestController;
 /*
  * Ejemplos de Consultas: 
  * Resultado 0 ==> localhost:8080/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172 
- *  * Resultado 1==>localhost:8080/?edad=49&sexo=F&presArtReposo=160&colesterol=180&glucemiaAyunas=0&frecuenciaCardiacaMax=156
+ *  * Resultado 1==>	
  *
  */
 public class APIController {
 	
-	@GetMapping("/")
+	@GetMapping(value = "/")
 	public String  modelo(@RequestParam Integer edad, String sexo,Integer presArtReposo, Integer colesterol, Integer glucemiaAyunas, Integer frecuenciaCardiacaMax){
 		Modelo modelo = new Modelo();
 		//modelo.aprenderModelo();
-		return("Al aplicar RandomForest a los datos aportados, el resultado es " + modelo.generarInstanciaConsulta(edad,sexo,presArtReposo,colesterol,glucemiaAyunas,frecuenciaCardiacaMax));
+		return("Al aplicar RandomForest a los datos aportados, el resultado es " + modelo.realizarConsulta(edad,sexo,presArtReposo,colesterol,glucemiaAyunas,frecuenciaCardiacaMax));
 		
 	}
-
-
+	@GetMapping("/curl")
+	public String  prueba(@RequestParam String saludo, String saludo2){
+		return("Hola" + saludo + saludo2);
+		
+	}
+/**
+	@GetMapping("/prueba")
+	public void  prueba(){
+		Modelo modelo = new Modelo();
+		modelo.aprenderModelo();
+		
+	}
+ */
 
 }
