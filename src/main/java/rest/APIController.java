@@ -32,8 +32,6 @@ import aprendizajeautomatico.*;
 /*
  * Ejemplos de Consultas: 
  * Resultado 0 ==> localhost:8080/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172 
- *  * Resultado 1==>	
- *
  */
 public class APIController {
 	
@@ -41,21 +39,17 @@ public class APIController {
 	public String  modelo(@RequestParam Integer edad, String sexo,Integer presArtReposo, Integer colesterol, Integer glucemiaAyunas, Integer frecuenciaCardiacaMax){
 		Modelo modelo = new Modelo();
 		//modelo.aprenderModelo();
-		return("Al aplicar RandomForest a los datos aportados, el resultado es " + modelo.realizarConsulta(edad,sexo,presArtReposo,colesterol,glucemiaAyunas,frecuenciaCardiacaMax));
+		return("{" + "Edad: " + edad + ", " + "\n" + "Sexo: " + sexo + ", " + "Presión Arterial en Reposo : " + presArtReposo + ", " + "Colesterol: " + colesterol + ", " + "Gluecemia en Ayunas: " + glucemiaAyunas + ", "  +  "Frecuencia Cardiaca Maxima: " + frecuenciaCardiacaMax + ", " + "Insuficiencia Cardiaca: "  + modelo.realizarConsulta(edad,sexo,presArtReposo,colesterol,glucemiaAyunas,frecuenciaCardiacaMax) + "}");
 		
 	}
-	@GetMapping("/curl")
-	public String  prueba(@RequestParam String saludo, String saludo2){
-		return("Hola" + saludo + saludo2);
-		
-	}
-/**
-	@GetMapping("/prueba")
+
+
+	@GetMapping("/aprenderModelo")
 	public void  prueba(){
 		Modelo modelo = new Modelo();
 		modelo.aprenderModelo();
-		
 	}
- */
+	
+	
 
 }

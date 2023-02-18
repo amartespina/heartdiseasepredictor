@@ -13,15 +13,6 @@ limitations under the License.
 package aprendizajeautomatico;
 
 
- /**
- * https://txikiboo.wordpress.com/2014/01/16/archivos-arff-weka/
- * https://ccia.esei.uvigo.es/docencia/MRA/practicas/api-weka/api-weka.html#SECTION00031000000000000000
- * file:///C:/Users/angel/OneDrive%20-%20Fundaci%C3%B3n%20Universitaria%20San%20Pablo%20CEU/Documentos/Insituto/Universidad/4%C2%BA%20Curso/TFG/proyecto/SpringBoot/springboot/test_data/test.arff
- * https://stackoverflow.com/questions/12953958/how-to-create-an-arff-file-from-an-array-in-java
- * https://stackoverflow.com/questions/2271926/how-to-read-a-file-from-a-jar-file
- */
-
-
 import weka.classifiers.Classifier;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
@@ -84,6 +75,7 @@ public class Modelo {
             oos.writeObject(cls);
             oos.flush();
             oos.close();
+            System.out.println("El modelo se ha aprendido correctamente");
             } 
             catch (Exception ex) {
             Logger.getLogger(Modelo.class.getName()).log(Level.SEVERE, null, ex);
@@ -120,7 +112,7 @@ public class Modelo {
         try{
             String[] valoresAtributos={"0","1"};
             //Leemos el modelo creado anteriormente. 
-            Classifier clasificador  = (Classifier) weka.core.SerializationHelper.read("./model/fallosCardiacosPersonalizado.model");
+            Classifier clasificador  = (Classifier) weka.core.SerializationHelper.read("./resources/fallosCardiacosPersonalizado.model");
             return valoresAtributos[(int) clasificador.classifyInstance(InstancesConsulta.instance(0))];
             }catch (Exception ex) {
             Logger.getLogger(Modelo.class.getName()).log(Level.SEVERE, null, ex);
