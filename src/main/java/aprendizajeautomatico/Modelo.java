@@ -65,13 +65,13 @@ public class Modelo {
             //create RandomForest
             Classifier cls = new RandomForest();
             //Creamos el Dataset cargándolo de un fchero ARFF
-            Instances InstanciaEntrenamiento = new Instances(new BufferedReader(new FileReader("./resources/fallosCardiacosPersonalizado.arff")));
+            Instances InstanciaEntrenamiento = new Instances(new BufferedReader(new FileReader("./src/main/java/resources/fallosCardiacosPersonalizado.arff")));
             // Establecemos que el último atributo va a ser el  Atributo Clase. El atributo clase es la variable que deseamos predecir.
             InstanciaEntrenamiento.setClassIndex(InstanciaEntrenamiento.numAttributes()-1);
             //Entenamos el clasificador con InstanciaEntrenamiento
             cls.buildClassifier(InstanciaEntrenamiento);
             // Serializamos el modelo 
-          ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./resources/fallosCardiacosPersonalizado.model"));
+          ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./src/main/resources/fallosCardiacosPersonalizado.model"));
             oos.writeObject(cls);
             oos.flush();
             oos.close();
@@ -112,7 +112,7 @@ public class Modelo {
         try{
             String[] valoresAtributos={"0","1"};
             //Leemos el modelo creado anteriormente. 
-            Classifier clasificador  = (Classifier) weka.core.SerializationHelper.read("./resources/fallosCardiacosPersonalizado.model");
+            Classifier clasificador  = (Classifier) weka.core.SerializationHelper.read("./src/main/resources/fallosCardiacosPersonalizado.model");
             return valoresAtributos[(int) clasificador.classifyInstance(InstancesConsulta.instance(0))];
             }catch (Exception ex) {
             Logger.getLogger(Modelo.class.getName()).log(Level.SEVERE, null, ex);

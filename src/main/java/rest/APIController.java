@@ -32,6 +32,8 @@ import aprendizajeautomatico.*;
 /*
  * Ejemplos de Consultas: 
  * Resultado 0 ==> localhost:8080/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172 
+ * https://stackoverflow.com/questions/5744919/generating-output-in-java
+ * https://dzone.com/articles/spring-boot-secured-by-lets-encrypt
  */
 public class APIController {
 	
@@ -39,7 +41,7 @@ public class APIController {
 	public String  modelo(@RequestParam Integer edad, String sexo,Integer presArtReposo, Integer colesterol, Integer glucemiaAyunas, Integer frecuenciaCardiacaMax){
 		Modelo modelo = new Modelo();
 		//modelo.aprenderModelo();
-		return("{" + "Edad: " + edad + ", " + "\n" + "Sexo: " + sexo + ", " + "Presión Arterial en Reposo : " + presArtReposo + ", " + "Colesterol: " + colesterol + ", " + "Gluecemia en Ayunas: " + glucemiaAyunas + ", "  +  "Frecuencia Cardiaca Maxima: " + frecuenciaCardiacaMax + ", " + "Insuficiencia Cardiaca: "  + modelo.realizarConsulta(edad,sexo,presArtReposo,colesterol,glucemiaAyunas,frecuenciaCardiacaMax) + "}");
+		return("{" + "Edad: " + edad + ", " + "\n" + "Sexo: " + sexo + ", " + "Presión Arterial en Reposo : " + presArtReposo + ", " + "Colesterol: " + colesterol + ", " + "Gluecemia en Ayunas: " + glucemiaAyunas + ", "  +  "Frecuencia Cardiaca Maxima: " + frecuenciaCardiacaMax + ", " + "Insuficiencia Cardiaca: "  + modelo.realizarConsulta(edad,sexo,presArtReposo,colesterol,glucemiaAyunas,frecuenciaCardiacaMax)+ "}");
 		
 	}
 
