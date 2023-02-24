@@ -45,6 +45,12 @@ public class APIController {
 		
 	}
 
+	@GetMapping(value = "/error")
+	public String  error(){
+		//modelo.aprenderModelo();
+		return("Has llegado a la página de error");
+	}
+
 
 	@GetMapping("/aprenderModelo")
 	public void  prueba(){
