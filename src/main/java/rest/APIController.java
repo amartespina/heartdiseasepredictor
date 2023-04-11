@@ -13,8 +13,11 @@ limitations under the License.
 
 package rest;
 
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,14 +30,14 @@ import aprendizajeautomatico.*;
  */
 
 
-@RestController
-
 /*
  * Ejemplos de Consultas: 
  * Resultado 0 ==> localhost:8080/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172 
  * https://stackoverflow.com/questions/5744919/generating-output-in-java
  * https://dzone.com/articles/spring-boot-secured-by-lets-encrypt
  */
+
+ @RestController
 public class APIController {
 	
 	@GetMapping(value = "/")
@@ -45,19 +48,11 @@ public class APIController {
 		
 	}
 
-	@GetMapping(value = "/error")
-	public String  error(){
-		//modelo.aprenderModelo();
-		return("Has llegado a la página de error");
-	}
-
-
-	@GetMapping("/aprenderModelo")
-	public void  prueba(){
-		Modelo modelo = new Modelo();
-		modelo.aprenderModelo();
-	}
-	
+	@GetMapping("/error")
+		public String error(){
+			return "error";
+		}
 	
 
+	
 }
