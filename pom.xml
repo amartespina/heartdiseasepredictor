@@ -9,9 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>heartfailureprediction.jar</artifactId>
-	<name>heartfailureprediction.jar</name>
-	<description>heartfailurepredictorSpringBoot</description>
+	<artifactId>hearth-failure-prediction</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>hearth-failure-prediction</name>
+	<description>hearth-failure-prediction-on-SpringBoot</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
