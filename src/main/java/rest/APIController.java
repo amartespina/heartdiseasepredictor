@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import aprendizajeautomatico.*;
+import aprendizajeAutomatico.*;
 
 /**
  * @author angel
@@ -38,9 +38,8 @@ import aprendizajeautomatico.*;
 public class APIController {
 	
 	@GetMapping(value = "/")
-	public String  modelo(@RequestParam Integer edad, String sexo,Integer presArtReposo, Integer colesterol, Integer glucemiaAyunas, Integer frecuenciaCardiacaMax){
+	public String  APIConsulta(@RequestParam Integer edad, String sexo,Integer presArtReposo, Integer colesterol, Integer glucemiaAyunas, Integer frecuenciaCardiacaMax){
 		Modelo modelo = new Modelo();
-		//modelo.aprenderModelo();
 		return("{" + "Edad: " + edad + ", " + "\n" + "Sexo: " + sexo + ", " + "Presión Arterial en Reposo : " + presArtReposo + ", " + "Colesterol: " + colesterol + ", " + "Gluecemia en Ayunas: " + glucemiaAyunas + ", "  +  "Frecuencia Cardiaca Maxima: " + frecuenciaCardiacaMax + ", " + "Insuficiencia Cardiaca: "  + modelo.realizarConsulta(edad,sexo,presArtReposo,colesterol,glucemiaAyunas,frecuenciaCardiacaMax)+ "}");
 		
 	}
@@ -52,11 +51,6 @@ public class APIController {
 	}
 
 
-	@GetMapping("/aprenderModelo")
-	public void  prueba(){
-		Modelo modelo = new Modelo();
-		modelo.aprenderModelo();
-	}
 	
 	
 
