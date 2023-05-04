@@ -32,7 +32,7 @@ import aprendizajeautomatico.*;
 
 /*
  * Ejemplos de Consultas: 
- * Resultado 0 ==> 	
+ * Resultado 0 ==> localhost:80/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172
  * myheartfailurepredictor.es/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172
  * https://stackoverflow.com/questions/5744919/generating-output-in-java
  * https://dzone.com/articles/spring-boot-secured-by-lets-encrypt
