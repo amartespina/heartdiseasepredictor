@@ -51,7 +51,7 @@ public class APIController {
 
 	@GetMapping("/error")
 		public String handleError(){
-			return "error";
+			return "{\"error\": \"syntax error\"}";
 		}
 	
 
