@@ -1,5 +1,5 @@
 mvn package
 xcopy .\src\ .\target\src\ /E
 cd target
-java -jar hearth-failure-prediction-2.7.1.jar 
+java -jar heartfailurepredictor-3.0.0.jar
 cmd /k
