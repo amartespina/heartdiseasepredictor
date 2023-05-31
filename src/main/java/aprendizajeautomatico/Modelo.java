@@ -92,7 +92,7 @@ public class Modelo {
      * @param colesterol: Colestero del sujeto
      * @param glucemiaAyunas: Glucemia del Sujeto ==> 1 if > 120 mg/dl | 0 en el resto de casos 
      * @param frecuenciaCardiacaMax: Valor entre 60 y 202
-     * @return Resultado de la Clasificación. 0 ==> Paciente sin Insuficiencia Cardíaca. 1==> Insuficiencia Cardíaca 
+     * @return Resultado de la Clasificación. 0 ==> Paciente sin enfermedad cardiovascular. 1==> Paciente con enfermedad cardiovascular 
      */
     public String realizarConsulta(Integer edad, String sexo,Integer presArtReposo, Integer colesterol, Integer glucemiaAyunas, Integer frecuenciaCardiacaMax){
         // Creamos una Instances. ( Representación en memoria de una colección de ejemplos)
