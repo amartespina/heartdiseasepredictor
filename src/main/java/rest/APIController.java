@@ -45,7 +45,7 @@ public class APIController {
 	public String  modelo(@RequestParam Integer edad, String sexo,Integer presArtReposo, Integer colesterol, Integer glucemiaAyunas, Integer frecuenciaCardiacaMax){
 		Modelo modelo = new Modelo();
 		//modelo.aprenderModelo();
-		return("{" + "Edad: " + edad + ", " + "\n" + "Sexo: " + sexo + ", " + "Presión Arterial en Reposo : " + presArtReposo + ", " + "Colesterol: " + colesterol + ", " + "Gluecemia en Ayunas: " + glucemiaAyunas + ", "  +  "Frecuencia Cardiaca Maxima: " + frecuenciaCardiacaMax + ", " + "Insuficiencia Cardiaca: "  + modelo.realizarConsulta(edad,sexo,presArtReposo,colesterol,glucemiaAyunas,frecuenciaCardiacaMax)+ "}");
+		return("{" + "Edad: " + edad + ", " + "\n" + "Sexo: " + sexo + ", " + "Presión Arterial en Reposo : " + presArtReposo + ", " + "Colesterol: " + colesterol + ", " + "Gluecemia en Ayunas: " + glucemiaAyunas + ", "  +  "Frecuencia Cardiaca Maxima: " + frecuenciaCardiacaMax + ", " + "Enfermedad Cardiaca: "  + modelo.realizarConsulta(edad,sexo,presArtReposo,colesterol,glucemiaAyunas,frecuenciaCardiacaMax)+ "}");
 		
 	}
 
