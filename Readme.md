@@ -36,6 +36,7 @@ En un **sistema Linux**  se recomienda llevar a cabo la instalación del JDK v.1
 
 ```console
 sudo apt update
+```
 
 sudo apt install openjdk-17-jdk openjdk-17-jre
 
