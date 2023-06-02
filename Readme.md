@@ -13,9 +13,9 @@ limitations under the License.
 
 
 ## Propósito de este Software ##
-El propósito de este sistema experto es la identificación de pacientes con mayor disposición a padecer eventos cardiovasculares (infarto de miocardio, ictus, insuficiencia cardiaca, muerte súbita etc.) en función de los síntomas que presente y sus características personales. 
+El propósito de este sistema basado en el conocimiento (SBC) es la identificación de pacientes con mayor disposición a padecer eventos cardiovasculares (infarto de miocardio, ictus, insuficiencia cardiaca, muerte súbita etc.) en función de los síntomas que presente y sus características personales. 
 
-Posteriormente, se ha desarrollado una API REST para gestionar las consultas HTTP lanzadas por los usuarios. Estas consultas incluirán la siguiente información:
+El SBC se ha encapsulado en una API REST para gestionar las consultas HTTP lanzadas por los clientes. Estas consultas incluirán la siguiente información:
 1. Edad [años]
 2. Sexo [M o F]
 4. Presión arterial en reposo [mm Hg]
@@ -34,9 +34,13 @@ Para montar el microservicio en un host propio es necesario que este tenga insta
 
 En un **sistema Linux**  se recomienda llevar a cabo la instalación del JDK v.17 y Maven desde el terminal.  En el caso de Ubuntu, es necesario ejecutar los siguientes comandos: 
 
-`sudo apt update`
-`sudo apt install openjdk-17-jdk openjdk-17-jre`
-`sudo apt install maven`
+```console
+sudo apt update
+
+sudo apt install openjdk-17-jdk openjdk-17-jre
+
+sudo apt install maven
+```
 
 La instalación de Docker es más compleja ya que es probable que el paquete de instalación contenido en el repositorio oficial de Ubuntu no contenga la versión más reciente. Por ello se recomienda llevar a cabo los pasos de la siguiente guía:
 
@@ -56,16 +60,22 @@ Para su instalación en **Windows**, se recomienda utilizar la interfaz gráfica
 
 En **ambos sistemas operativos** se puede comprobar su instalación. Para ello se ejecuta desde el terminal o desde el cmd los siguientes comandos:
 
-`java -version`
+```console
+java -version
 
-`mvn -version`
+mvn -version
 
-`docker --version`
+docker --version
+
+```
+
 
 ## Montaje del microservicio (sin Docker) ##
 En este caso, las acciones a llevar a cabo son: abrir un terminal y clonar el repositorio que lo contiene. De esta forma, los comandos a ejecutar serían:  
 
-`git clone https://github.com/amartespina/heartfailurepredictor.git`
+```console
+git clone https://github.com/amartespina/heartfailurepredictor.git
+```
 
 Si se está utilizando un **sistema Linux**, se accede al directorio creado y se ejecuta el script linuxAutorun.sh: 
 
