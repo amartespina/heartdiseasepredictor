@@ -107,7 +107,9 @@ Tras ejecutar este comando, se verá desde la consola que la aplicación de Spri
 
 En primer lugar, es necesario iniciar *Docker Daemon*. En un **sistema Windows** es posible hacerlo desde la interfaz gráfica abriendo el programa Docker Desktop. En un **sistema Linux** se ejecuta desde el terminal: 
 
-`sudo systemctl start docker`
+```console
+sudo systemctl start docker
+```
 
 Cuando el repositorio termine de clonarse, se accede al directorio que se haya creado.  Posteriormente se construye la imagen Docker, indicando con el punto final que el Dockerfile se encuentra en el directorio desde el que se ejecuta el comando. Por último, se ejecuta la imagen creada previamente enlazando el puerto 80 de la máquina host con el puerto 80 del contenedor. Los comandos para ejecutar son: 
 
