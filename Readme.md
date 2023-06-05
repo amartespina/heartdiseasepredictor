@@ -137,7 +137,7 @@ Es posible lanzar consultas al microservicio desde el navegador o desde el termi
 
 ```console
 localhost:80/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172
-```console
+```
 
 Si se opta por utilizar el terminal, es necesario utilizar el comando curl e introducir la consulta entre comillas. Por ejemplo:
 
@@ -147,13 +147,16 @@ curl “localhost:80/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAy
 
 ## Lanzamiento de consultas al microservicio (montado en un servidor ajeno)  ##
 El microservicio admite consultas realizadas desde el terminal o desde el navegador. A continuación, se muestra una consulta lanzada desde el navegador: 
+
 ```console
 http://myheartfailurepredictor.es/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172
+
 ```
 
 De lo contrario, para lanzar la petición desde el terminal la consulta debe de ir entre comillas y precedida por el comando curl. Por ejemplo: 
 
 ```console
 curl “http://myheartfailurepredictor.es/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172”
+
 ```
 
