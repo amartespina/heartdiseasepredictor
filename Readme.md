@@ -38,8 +38,15 @@ En un **sistema Linux**  se recomienda llevar a cabo la instalación del JDK v.1
 sudo apt update
 ```
 
-sudo apt install openjdk-17-jdk openjdk-17-jre
+```console
+sudo apt install openjdk-17-jdk 
+```
 
+```console
+openjdk-17-jre
+```
+
+```console
 sudo apt install maven
 ```
 
@@ -63,11 +70,12 @@ En **ambos sistemas operativos** se puede comprobar su instalación. Para ello s
 
 ```console
 java -version
-
+```
+```console
 mvn -version
-
+```
+```console
 docker --version
-
 ```
 
 
@@ -75,12 +83,12 @@ docker --version
 En este caso, las acciones a llevar a cabo son: abrir un terminal y clonar el repositorio que lo contiene. De esta forma, los comandos a ejecutar serían:  
 
 ```console
-git clone https://github.com/amartespina/heartfailurepredictor.git
+git clone https://github.com/amartespina/heartdiseasepredictor.git
 ```
 
 Si se está utilizando un **sistema Linux**, se accede al directorio creado y se ejecuta el script linuxAutorun.sh: 
 
-`cd heartfailurepredictor`
+`cd heartdiseasepredictor`
 
 `sh linuxAutorun.sh`
 
@@ -98,15 +106,15 @@ En primer lugar, es necesario iniciar *Docker Daemon*. En un **sistema Windows**
 
 Cuando el repositorio termine de clonarse, se accede al directorio que se haya creado.  Posteriormente se construye la imagen Docker, indicando con el punto final que el Dockerfile se encuentra en el directorio desde el que se ejecuta el comando. Por último, se ejecuta la imagen creada previamente enlazando el puerto 80 de la máquina host con el puerto 80 del contenedor. Los comandos para ejecutar son: 
 
-`git clone https://github.com/amartespina/heartfailurepredictor.git`
+`git clone https://github.com/amartespina/heartdiseasepredictor.git`
 
-`cd heartfailurepredictor`
+`cd heartdiseasepredictor`
 
 `mvn package`
 
-`docker build -t “imagenmyheartfailurepredictor” .`
+`docker build -t “imagenmyheartdiseasepredictor” .`
 
-`docker run -p 80:80 -d “imagenmyheartfailurepredictor”`
+`docker run -p 80:80 -d “imagenmyheartdiseasepredictor”`
 
 ## Lanzamientos de consultas al microservicio (montado sobre el host propio) ##
 

@@ -14,12 +14,7 @@ limitations under the License.
 package rest;
 
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,8 +29,6 @@ import aprendizajeautomatico.*;
  * Ejemplos de Consultas: 
  * Resultado 0 ==> localhost:80/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172
  * myheartfailurepredictor.es/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172
- * https://stackoverflow.com/questions/5744919/generating-output-in-java
- * https://dzone.com/articles/spring-boot-secured-by-lets-encrypt
  */
 
  @RestController
