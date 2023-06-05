@@ -89,9 +89,13 @@ git clone https://github.com/amartespina/heartdiseasepredictor.git
 
 Si se está utilizando un **sistema Linux**, se accede al directorio creado y se ejecuta el script linuxAutorun.sh: 
 
-`cd heartdiseasepredictor`
+```console
+cd heartdiseasepredictor`
+```
 
-`sh linuxAutorun.sh`
+```console
+sh linuxAutorun.sh
+```
 
 Si el sistema operativo es **Windows**, se accede al directorio creado a través de la interfaz gráfica y se ejecuta el script windowsAutorun. Para ello, se hace clic derecho sobre él y se presiona la opción “Ejecutar con PowerShell”.
 
@@ -107,32 +111,49 @@ En primer lugar, es necesario iniciar *Docker Daemon*. En un **sistema Windows**
 
 Cuando el repositorio termine de clonarse, se accede al directorio que se haya creado.  Posteriormente se construye la imagen Docker, indicando con el punto final que el Dockerfile se encuentra en el directorio desde el que se ejecuta el comando. Por último, se ejecuta la imagen creada previamente enlazando el puerto 80 de la máquina host con el puerto 80 del contenedor. Los comandos para ejecutar son: 
 
-`git clone https://github.com/amartespina/heartdiseasepredictor.git`
+```console
+git clone https://github.com/amartespina/heartdiseasepredictor.git
+```
 
-`cd heartdiseasepredictor`
+```console
+cd heartdiseasepredictor
+```
 
-`mvn package`
+```console
+mvn package
+```
 
-`docker build -t “imagenmyheartdiseasepredictor” .`
+```console
+docker build -t “imagenmyheartdiseasepredictor” .
+```
 
-`docker run -p 80:80 -d “imagenmyheartdiseasepredictor”`
+```console
+docker run -p 80:80 -d “imagenmyheartdiseasepredictor”
+```
 
 ## Lanzamientos de consultas al microservicio (montado sobre el host propio) ##
 
 Es posible lanzar consultas al microservicio desde el navegador o desde el terminal. En el primer caso, la consulta se introduce en la barra de búsqueda sustituyendo los valores dados por aquellos propios del usuario: 
 
-`localhost:80/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172`
+```console
+localhost:80/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172
+```console
 
 Si se opta por utilizar el terminal, es necesario utilizar el comando curl e introducir la consulta entre comillas. Por ejemplo:
 
-`curl “localhost:80/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172”`
+```console
+curl “localhost:80/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172”
+```
 
 ## Lanzamiento de consultas al microservicio (montado en un servidor ajeno)  ##
 El microservicio admite consultas realizadas desde el terminal o desde el navegador. A continuación, se muestra una consulta lanzada desde el navegador: 
-
-`http://myheartfailurepredictor.es/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172`
+```console
+http://myheartfailurepredictor.es/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172
+```
 
 De lo contrario, para lanzar la petición desde el terminal la consulta debe de ir entre comillas y precedida por el comando curl. Por ejemplo: 
 
-`curl “http://myheartfailurepredictor.es/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172”`
+```console
+curl “http://myheartfailurepredictor.es/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172”
+```
 
