@@ -84,6 +84,7 @@ En este caso, las acciones a llevar a cabo son: abrir un terminal y clonar el re
 
 ```console
 git clone https://github.com/amartespina/heartdiseasepredictor.git
+
 ```
 
 Si se está utilizando un **sistema Linux**, se accede al directorio creado y se ejecuta el script linuxAutorun.sh: 
