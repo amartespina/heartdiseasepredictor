@@ -10,9 +10,9 @@
 </parent>
 
 <groupId>com.example</groupId>
-<artifactId>heartfailurepredictor</artifactId>
-<name>heartfailureprediction</name>
-<description>heart-failure-prediction-on-SpringBoot</description>
+<artifactId>heartdiseasepredictor</artifactId>
+<name>heartdiseasepredictor</name>
+<description>heart-disease-prediction-on-SpringBoot</description>
 <properties>
 	<java.version>17</java.version>
 </properties>
