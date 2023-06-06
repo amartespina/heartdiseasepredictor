@@ -126,11 +126,11 @@ mvn package
 ```
 
 ```console
-docker build -t “imagenmyheartdiseasepredictor” .
+sudo docker build -t "imagenmyheartdiseasepredictor" .
 ```
 
 ```console
-docker run -p 80:80 -d “imagenmyheartdiseasepredictor”
+sudo docker run -p 80:80 -d "imagenmyheartdiseasepredictor"
 ```
 
 ## Lanzamientos de consultas al microservicio (montado sobre el host propio) ##
@@ -144,7 +144,7 @@ localhost:80/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&f
 Si se opta por utilizar el terminal, es necesario utilizar el comando curl e introducir la consulta entre comillas. Por ejemplo:
 
 ```console
-curl “localhost:80/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172”
+curl "localhost:80/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172"
 ```
 
 ## Lanzamiento de consultas al microservicio (montado en un servidor ajeno)  ##
@@ -158,7 +158,7 @@ http://myheartfailurepredictor.es/?edad=40&sexo=M&presArtReposo=140&colesterol=2
 De lo contrario, para lanzar la petición desde el terminal la consulta debe de ir entre comillas y precedida por el comando curl. Por ejemplo: 
 
 ```console
-curl “http://myheartfailurepredictor.es/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172”
+curl "http://myheartfailurepredictor.es/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172"
 
 ```
 

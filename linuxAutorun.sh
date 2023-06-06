@@ -2,4 +2,4 @@
 mvn package
 cp -r src ./target
 cd target
-java -jar heartdiseasepredictor-3.0.0.jar
+sudo java -jar heartdiseasepredictor-3.0.0.jar
