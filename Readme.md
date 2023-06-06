@@ -90,7 +90,7 @@ git clone https://github.com/amartespina/heartdiseasepredictor.git
 Si se está utilizando un **sistema Linux**, se accede al directorio creado y se ejecuta el script linuxAutorun.sh: 
 
 ```console
-cd heartdiseasepredictor`
+cd heartdiseasepredictor
 ```
 
 ```console
