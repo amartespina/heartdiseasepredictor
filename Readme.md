@@ -94,7 +94,7 @@ cd heartdiseasepredictor
 ```
 
 ```console
-sh linuxAutorun.sh
+sudo sh linuxAutorun.sh
 ```
 
 Si el sistema operativo es **Windows**, se accede al directorio creado a través de la interfaz gráfica y se ejecuta el script windowsAutorun. Para ello, se hace clic derecho sobre él y se presiona la opción “Ejecutar con PowerShell”.
