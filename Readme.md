@@ -94,7 +94,7 @@ cd heartdiseasepredictor
 ```
 
 ```console
-sh linuxAutorun.sh
+sudo sh linuxAutorun.sh
 ```
 
 Si el sistema operativo es **Windows**, se accede al directorio creado a través de la interfaz gráfica y se ejecuta el script windowsAutorun. Para ello, se hace clic derecho sobre él y se presiona la opción “Ejecutar con PowerShell”.
@@ -144,7 +144,7 @@ localhost:80/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&f
 Si se opta por utilizar el terminal, es necesario utilizar el comando curl e introducir la consulta entre comillas. Por ejemplo:
 
 ```console
-curl "localhost:80/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172"
+curl -L "localhost:80/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172"
 ```
 
 ## Lanzamiento de consultas al microservicio (montado en un servidor ajeno)  ##
@@ -158,7 +158,7 @@ http://myheartfailurepredictor.es/?edad=40&sexo=M&presArtReposo=140&colesterol=2
 De lo contrario, para lanzar la petición desde el terminal la consulta debe de ir entre comillas y precedida por el comando curl. Por ejemplo: 
 
 ```console
-curl "http://myheartfailurepredictor.es/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172"
+curl -L "http://myheartfailurepredictor.es/?edad=40&sexo=M&presArtReposo=140&colesterol=289&glucemiaAyunas=0&frecuenciaCardiacaMax=172"
 
 ```
 
